@@ -186,6 +186,9 @@ address,i{font-style:normal;}
 
 
 /* NOTICE-GALLERY */
+.notice-gallery{
+    padding:1em;
+}
 .notice-gallery .sec-tit{
     display:none;
 }
@@ -202,6 +205,9 @@ address,i{font-style:normal;}
     top:0;
 }
 .sub-tit{
+    position:absolute;
+    left:0;
+    top:0;
     width:50%;
     padding:0.6em;
     background-color:#eee;
@@ -209,7 +215,7 @@ address,i{font-style:normal;}
     cursor: pointer;
 }
 .sub-tit.on{
-    background-color:#009900;
+    background-color:#006600;
     color:#fff;
 }
 
@@ -239,7 +245,11 @@ address,i{font-style:normal;}
     transform: translateX(100%);
 }
 .gallery-list{
-    display:grid;
+    /* display:grid; */
+    display:none;
     grid-template-columns:repeat(3,1fr);
     gap: 0.5em;
+}
+.gallery-content{
+    display: none;
 }
