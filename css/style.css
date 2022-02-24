@@ -191,6 +191,8 @@ address,i{font-style:normal;}
 }
 .notice-gallery .row{
     position:relative;
+    height:250px;
+    overflow:hidden;
 
 }
 .notice-gallery .art{
@@ -200,11 +202,44 @@ address,i{font-style:normal;}
     top:0;
 }
 .sub-tit{
+    width:50%;
     padding:0.6em;
     background-color:#eee;
     text-align:center;
+    cursor: pointer;
+}
+.sub-tit.on{
+    background-color:#009900;
+    color:#fff;
 }
 
 
+.notice-list ul{
+    display:grid;
+    grid-template-columns:7fr 3fr 2fr;
+}
+.notice-list ul{
+    text-align:center;
+    font-weight:600;
+}
+.notice-list ul.notice-content{
+    font-weight:400;
+}
+.notice-list ul li:first-child,
+.notice-list ul li:last-child{
+    display: none;
+}
+.notice-list ul li:nth-child(2){
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    overflow:hidden;
+}
 
-.gallery{display: none;}
+.gallery .sub-tit{
+    transform: translateX(100%);
+}
+.gallery-list{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap: 0.5em;
+}
