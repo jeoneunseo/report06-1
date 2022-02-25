@@ -76,7 +76,7 @@
                         </div>
                     </div>
                     <div class="slide slide02">
-                        <div class="img-box"><a href="#"><img src="./images/slide02.png" alt="청년 희망홀씨 예금/적금" title="청년 희망홀씨 예금/적금 바로가기"></a></div>
+                        <div class="img-box"><a href="#"><img src="./images/slide02.jpg" alt="청년 희망홀씨 예금/적금" title="청년 희망홀씨 예금/적금 바로가기"></a></div>
                         <div class="slide-content">
                             <h3>청년 희망홀씨 예금/적금</h3>
                             <p>Lorem ipsum dolor sit amet.</p>
@@ -94,8 +94,8 @@
             <div class="container">
                 <div class="row">
                     <h2 class="sec-tit">공지사항/갤러리</h2>
-                    <article class="art notice">
-                        <h3 class="sub-tit on">공지사항</h3>
+                    <article class="art notice on">
+                        <h3 class="sub-tit">공지사항</h3>
                         <ul class="notice-list">
                             <li>
                                 <ul class="notice-tit">
@@ -138,7 +138,7 @@
                                     <li>7</li>
                                     <li><a href="#">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</a></li>
                                     <li>2021-05-01</li>
-                                    <li>총무과장</li>
+                                    <li>영업2팀</li>
                                     <li>52</li>
                                 </ul>
                             </li>
@@ -194,11 +194,11 @@
                 <div class="row">
                     <h2 class="sec-tit">배너</h2>
                     <div class="img-box">
-                        <a href="#"><img src="./images/banner.jpg" alt="현대해상 자동차보험"></a>
+                        <a href="#"><img src="./images/banner.png" alt="현대해상 자동차보험"></a>
                     </div>
                     <div class="banner-content">
                         <h3 class="cont-tit">현대해상 자동자보험</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem accusantium architecto ipsum, at natus excepturi nesciunt dolore iure, culpa consequuntur pariatur beatae necessitatibus, voluptate distinctio officiis enim quod iusto omnis.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur.</p>
                     </div>
                 </div>
             </div>
@@ -206,15 +206,31 @@
         <footer class="footer" id="footer">
             <div class="container">
                 <div class="row">
-                    <h2 class="sec-tit"><a href="./index.html" title="시작페이지로 이동">BHD</a></h2>
+                    <h2 class="logo sec-tit">
+                        <a href="./index.html" title="시작페이지로 이동">
+                            <span>D</span><span>H</span><span>B</span>
+                        </a>
+                    </h2>
                     <address>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam, inventore perspiciatis atque harum ducimus minima! Amet autem et eaque hic, sapiente sequi expedita facilis tempora facere dolorum, incidunt unde repudiandae!
+                        CapyRight JES
                     </address>
                     <div class="sns-list">
                         <ul>
-                            <li><a href="#">facebook</a></li>
-                            <li><a href="#">instargram</a></li>
-                            <li><a href="#">twitter</a></li>
+                            <li>
+                                <a href="#">
+                                    <span>facebook</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>instargram</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span>kakao</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -283,37 +299,86 @@
 
 
     <script>
-    //     $('.nav-level1>li').mouseenter(function(){
-    //         $(this).children('.nav-level2').slideDown(300);
-    //     })
-    //     $('.nav-level2,.nav-level1>li').mouseleave(function(){
-    //         $('.nav-level2').slideUp(300);
-    //     })
+    // 메뉴
+        $('.nav-level1>li').mouseenter(function(){
+            $(this).children('.nav-level2').slideDown(300);
+        })
+        $('.nav-level2,.nav-level1>li').mouseleave(function(){
+            $('.nav-level2').slideUp(300);
+        })
+        
+    // 공지사항/갤러리 이동
+        $('.sub-tit').on('click',function(){
+            $('.art').removeClass('on');
+            $(this).parent('.art').addClass('on');
+        })
+    // 스킵메뉴
+    // 씨발 오류
+        // $('.skip-nav a').on({
+        //     focusin:function(){
+        //         $('.skip-nav').css('top','0');
+        //     },
+        //     focusout:function(){
+        //         $('.skip-nav').css('top','-9999px');
+        //     }
+        // })
+
+        $('.gallery-list img').on({
+            click:function(){
+                console.log($(this).attr('src'));
+                console.log($('.gallery-content .cont-tit').text());
+            }
+        })
 
 
 
-    // // 오류 ㅡㅡ
-    //     let nowSlide = 1;
-    //     setInterval(changeSlide,3000);
-    //     function changeSlide(){
-    //         let slideEls = $('.slide');
-    //         if(count>=3){
-    //             nowSlide=1;
-    //             for(let idx=0;idx<slideEls.length;idx++){
-    //                 let leftVal = slideEls.eq(idx).position().left;
-    //                 slideEls.eq(idx).css('left',leftVal+=2400);
-    //             }
-    //         }else{
-    //         for(let idx=0;idx<slideEls.length;idx++){
-    //             let leftVal = slideEls.eq(idx).position().left;
-    //             slideEls.eq(idx).css('left',leftVal-=1200);
-    //         }
-    //         // nowSlide++;
-    //         }
-    //     }
+
+    // 모달 열기
+        let conTits = $('.notice-content li:nth-child(2) a');
+        conTits.on({
+            click:function(e){
+                $('.popup01').show(0);
+                e.preventDefault();
+            }
+        })
+
+
+    // 모달 닫기
+        $('.modal-btn button').on({
+            click:function(){
+                $('.modal-popup').hide(0);
+            }
+        })
 
 
 
+    // 슬라이더
+        setInterval(mySlider,3000);
+        let cnt = 1;
+        function mySlider(){
+            if(cnt>=3){
+                cnt=1;
+                $('.slide').animate({
+                    left:'+=2400px',
+                });
+            }else{
+                cnt++;
+                $('.slide').animate({
+                    left:'-=1200px',
+                });
+
+            }
+        }
+
+
+
+        
+
+
+
+
+
+ 
 
 
     </script>
