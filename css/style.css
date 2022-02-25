@@ -19,20 +19,44 @@ address,i{font-style:normal;}
     display:block;
     clear:both;
 }
+
+/* SKIP NAV */
+.skip-nav{
+    position:fixed;
+    left:0;
+    right:0;
+    top:-1000px;
+    z-index:9999;
+    padding:2em;
+    background-color:#222326;
+    font-size:2em;
+    color:#fff;
+}
+.skip-nav ul{
+    display:grid;
+    grid-template-columns:repeat(5,auto);
+    gap: 4em;
+}
+
+
+
 .wrap{
     width:100%;
     max-width:1200px;
     margin:0 auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
+    column-gap:2em;
 }
-
-
 .doc-tit{display:none;}
 
 /* HEADER */
 .header,.slider,.footer{
     grid-column:1/3;
+}
+.header{
+    position:relative;
+    z-index:1;
 }
 .header .container{
     border-bottom:1px solid #222326;
@@ -47,16 +71,16 @@ address,i{font-style:normal;}
 
     height:100px;
 }
-.header .sec-tit{
+.logo{
     padding-left:1em;
     font-weight:800;
     font-size:4.5em;
 }
 
-.header .sec-tit span:nth-child(1){
+.logo.sec-tit span:nth-child(1){
     color:#009900;
 }
-.header .sec-tit span:nth-child(2){
+.logo.sec-tit span:nth-child(2){
     color:#006600;
 }
 .nav{
@@ -128,6 +152,9 @@ address,i{font-style:normal;}
 
 
 /* SLIDE */
+.slider{
+    margin-bottom:4em;
+}
 .slider .sec-tit {
     display:none;
 }
@@ -185,10 +212,8 @@ address,i{font-style:normal;}
 }
 
 
+
 /* NOTICE-GALLERY */
-.notice-gallery{
-    padding:1em;
-}
 .notice-gallery .sec-tit{
     display:none;
 }
@@ -196,35 +221,45 @@ address,i{font-style:normal;}
     position:relative;
     height:250px;
     overflow:hidden;
-
 }
 .notice-gallery .art{
     position:absolute;
     left:0;
     right:0;
     top:0;
+    z-index:10;
+    padding-top:60px;
 }
 .sub-tit{
     position:absolute;
     left:0;
     top:0;
     width:50%;
-    padding:0.6em;
+    border-bottom:4px solid #006600;
+    padding:1em;
     background-color:#eee;
     text-align:center;
     cursor: pointer;
 }
-.sub-tit.on{
+.notice-gallery .art.on{
+    z-index:9;
+}
+.art.on .sub-tit{
     background-color:#006600;
     color:#fff;
 }
-
-
+.art.on .notice-list{
+    display:block;
+}
+.art.on .gallery-list{
+    display:flex;
+}
+.notice-list>li{
+    margin:0.3em 0;
+}
 .notice-list ul{
     display:grid;
     grid-template-columns:7fr 3fr 2fr;
-}
-.notice-list ul{
     text-align:center;
     font-weight:600;
 }
@@ -242,7 +277,8 @@ address,i{font-style:normal;}
 }
 
 .gallery .sub-tit{
-    transform: translateX(100%);
+    left:auto;    
+    right:0;
 }
 .gallery-list{
     /* display:grid; */
@@ -252,4 +288,118 @@ address,i{font-style:normal;}
 }
 .gallery-content{
     display: none;
+}
+.gallery-list img{
+    height:170px;
+}
+
+
+
+/* BANNER */
+.banner{
+    margin-bottom:4em;
+}
+.banner .sec-tit{
+    display: none;
+}
+.banner .row{
+    height:350px;
+    overflow:hidden;
+    position:relative;
+}
+.banner-content{
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    padding:2em;
+
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content:space-evenly;
+}
+.banner-content .cont-tit{
+    font-weight: 700;
+    font-size:3em;
+    color:#009900;
+    text-shadow:0 0 5px #fff;
+}
+.banner-content p{
+    font-weight:500;
+    font-size:1.5em;
+    color:#222326;
+    /* text-shadow:0 0 5px #222326; */
+}
+
+
+
+/* FOOTER */
+.footer{
+    border-top:1px solid #006600;
+    padding:2em 0;
+}
+
+.footer .row{
+    display:grid;
+    grid-template-columns:2fr 8fr 2fr;
+    align-items:center;
+    gap:2em;
+}
+address{
+    text-align:center;
+}
+.sns-list ul{
+    display:grid;
+    grid-template-columns:repeat(3,auto);
+    gap:2em;
+}
+
+
+.modal-popup{
+    position:fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:5000;
+    background-color:rgba(0,0,0,0.5);
+    display: none;
+}
+.modal-popup .row{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:600px;
+    border-radius:2em;
+    padding:2em;
+    background-color:#fff;
+}
+
+.modal-popup h2{
+    margin-bottom:1em;
+    font-weight: 700;
+    font-size:1.5em;
+    text-transform:capitalize;
+}
+.modal-content{
+    margin-bottom:2em;
+}
+.modal-btn{
+    text-align:end
+}
+.modal-btn button{
+    padding:0.5em 1em;
+    background-color:#006600;
+    color:#fff;
+}
+.modal-btn button:hover{
+    padding:0.5em 1em;
+    background-color:#009900;
+    color:#222326;
+}
+
+.popup02{
+    display:block;
 }
