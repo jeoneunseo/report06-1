@@ -391,15 +391,15 @@ address{
 }
 .modal-btn button{
     padding:0.5em 1em;
-    background-color:#006600;
-    color:#fff;
+    background-color:#fff;
+    color: #222;;
 }
 .modal-btn button:hover{
     padding:0.5em 1em;
-    background-color:#009900;
-    color:#222326;
+    background-color:#006600;
+    color:#fff;
 }
 
-.popup02{
+/* .popup02{
     display:block;
-}
+} */
