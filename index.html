@@ -263,9 +263,12 @@
     <div class="modal-popup popup02">
         <div class="container">
             <div class="row">
-                <h2>modal02</h2>
-                <div class="modal-content">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente iusto magnam animi, magni quod voluptas aspernatur vitae totam nam non rerum saepe adipisci consequatur, voluptate dolor doloribus error commodi quidem!
+                <h2 class="modal-tit">그림제목</h2>
+                <div class="modal-img">
+                    <img src="그림위치" alt="그림설명">
+                </div>
+                <div class="modal-con">
+                    그림설명
                 </div>
                 <div class="modal-btn">
                     <button type="button">닫기</button>
@@ -273,7 +276,7 @@
             </div>
         </div>
     </div>
-    <div class="modal-popup popup03">
+    <!-- <div class="modal-popup popup03">
         <div class="container">
             <div class="row">
                 <h2>modal03</h2>
@@ -285,11 +288,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
-
-
+    </div> -->
 
 
 
@@ -297,89 +296,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script></body>
     <script src="./js/js.js"></script>
 
-
-    <script>
-    // 메뉴
-        $('.nav-level1>li').mouseenter(function(){
-            $(this).children('.nav-level2').slideDown(300);
-        })
-        $('.nav-level2,.nav-level1>li').mouseleave(function(){
-            $('.nav-level2').slideUp(300);
-        })
-        
-    // 공지사항/갤러리 이동
-        $('.sub-tit').on('click',function(){
-            $('.art').removeClass('on');
-            $(this).parent('.art').addClass('on');
-        })
-    // 스킵메뉴
-    // 씨발 오류
-        // $('.skip-nav a').on({
-        //     focusin:function(){
-        //         $('.skip-nav').css('top','0');
-        //     },
-        //     focusout:function(){
-        //         $('.skip-nav').css('top','-9999px');
-        //     }
-        // })
-
-        $('.gallery-list img').on({
-            click:function(){
-                console.log($(this).attr('src'));
-                console.log($('.gallery-content .cont-tit').text());
-            }
-        })
-
-
-
-
-    // 모달 열기
-        let conTits = $('.notice-content li:nth-child(2) a');
-        conTits.on({
-            click:function(e){
-                $('.popup01').show(0);
-                e.preventDefault();
-            }
-        })
-
-
-    // 모달 닫기
-        $('.modal-btn button').on({
-            click:function(){
-                $('.modal-popup').hide(0);
-            }
-        })
-
-
-
-    // 슬라이더
-        setInterval(mySlider,3000);
-        let cnt = 1;
-        function mySlider(){
-            if(cnt>=3){
-                cnt=1;
-                $('.slide').animate({
-                    left:'+=2400px',
-                });
-            }else{
-                cnt++;
-                $('.slide').animate({
-                    left:'-=1200px',
-                });
-
-            }
-        }
-
-
-
-        
-
-
-
-
-
- 
-
-
-    </script>
 </html>
